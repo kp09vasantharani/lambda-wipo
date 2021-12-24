@@ -16,6 +16,6 @@ phases:
   post_build:
     commands:
       - echo "Updating lambda Function..."
-      - aws s3 cp --recursive artifacts s3://lambdabucketwipo/lambda/
+      - aws s3 cp --recursive deployment_package.zip s3://lambdabucketwipo/lambda/
       - aws lambda update-function-code --function-name Lambdafucntiontest --zip-file fileb://deployment_package.zip
       - echo "DONE!!"
